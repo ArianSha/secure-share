@@ -1,0 +1,4 @@
+catalogMode: strict
+catalog:
+  '@biomejs/biome': 2.6.6
+  typescript: ^7.0.2
