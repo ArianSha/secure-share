@@ -1,26 +1,134 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #fffafb;
+  --foreground: #291b2a;
+  --card: #ffffff;
+  --card-foreground: #291b2a;
+  --popover: #fffbfd;
+  --popover-foreground: #291b2a;
+  --primary: #832946;
+  --primary-foreground: #fffafb;
+  --secondary: #f1e4eb;
+  --secondary-foreground: #6f475d;
+  --muted: #f8f0f4;
+  --muted-foreground: #786576;
+  --accent: #f4e4ed;
+  --accent-foreground: #832946;
+  --destructive: #b4234c;
+  --border: #eadce4;
+  --input: #a38496;
+  --ring: #be7a91;
+  --chart-1: #832946;
+  --chart-2: #9d4f71;
+  --chart-3: #b86d8b;
+  --chart-4: #be7a91;
+  --chart-5: #d8a1b9;
+  --radius: 0.75rem;
+  --sidebar: #f7eff4;
+  --sidebar-foreground: #291b2a;
+  --sidebar-primary: #832946;
+  --sidebar-primary-foreground: #fffafb;
+  --sidebar-accent: #f1e4eb;
+  --sidebar-accent-foreground: #6f475d;
+  --sidebar-border: #eadce4;
+  --sidebar-ring: #be7a91;
+}
+
+.dark {
+  --background: #26252b;
+  --foreground: #faf8fc;
+  --card: #34323b;
+  --card-foreground: #faf8fc;
+  --popover: #3b3842;
+  --popover-foreground: #faf8fc;
+  --primary: #e9aac4;
+  --primary-foreground: #241722;
+  --secondary: #49414f;
+  --secondary-foreground: #f2dfeb;
+  --muted: #3a3642;
+  --muted-foreground: #c8c0ce;
+  --accent: #534052;
+  --accent-foreground: #ffe4f0;
+  --destructive: #ffb0bb;
+  --border: #645a6f;
+  --input: #aaa0b5;
+  --ring: #edb8d0;
+  --chart-1: #e9aac4;
+  --chart-2: #d194b3;
+  --chart-3: #b485ac;
+  --chart-4: #97769c;
+  --chart-5: #7c688b;
+  --sidebar: #2e2c34;
+  --sidebar-foreground: #faf8fc;
+  --sidebar-primary: #e9aac4;
+  --sidebar-primary-foreground: #241722;
+  --sidebar-accent: #49414f;
+  --sidebar-accent-foreground: #f2dfeb;
+  --sidebar-border: #645a6f;
+  --sidebar-ring: #edb8d0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
 }
