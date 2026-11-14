@@ -1,0 +1,75 @@
+{
+  "items": {
+    "columns": [
+      {
+        "name": "sender",
+        "column_type": {
+          "type": "Enum",
+          "variants": ["host", "recipient"]
+        },
+        "nullable": false
+      },
+      {
+        "name": "type",
+        "column_type": {
+          "type": "Enum",
+          "variants": ["text", "file"]
+        },
+        "nullable": false
+      },
+      {
+        "name": "text",
+        "column_type": {
+          "type": "Text"
+        },
+        "nullable": false,
+        "default": {
+          "type": "Text",
+          "value": ""
+        }
+      },
+      {
+        "name": "name",
+        "column_type": {
+          "type": "Text"
+        },
+        "nullable": false,
+        "default": {
+          "type": "Text",
+          "value": ""
+        }
+      },
+      {
+        "name": "size",
+        "column_type": {
+          "type": "Integer"
+        },
+        "nullable": false,
+        "default": {
+          "type": "Integer",
+          "value": 0
+        }
+      },
+      {
+        "name": "blobId",
+        "column_type": {
+          "type": "Uuid"
+        },
+        "nullable": true
+      }
+    ],
+    "relations": {}
+  },
+  "files": {
+    "columns": [
+      {
+        "name": "content",
+        "column_type": {
+          "type": "Bytea"
+        },
+        "nullable": false
+      }
+    ],
+    "relations": {}
+  }
+}

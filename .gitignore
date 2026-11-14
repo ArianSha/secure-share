@@ -24,3 +24,5 @@ out/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Local Jazz database and blob storage
+packages/app/data/

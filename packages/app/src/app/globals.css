@@ -122,7 +122,13 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-sm text-foreground;
+  }
+  h1 {
+    @apply font-heading text-3xl leading-tight font-semibold tracking-tight text-balance;
+  }
+  h2 {
+    @apply font-heading text-sm font-medium;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {

@@ -1,5 +1,5 @@
-import { RecipientSetup } from "./recipient-setup";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <RecipientSetup />;
+  redirect("/share");
 }

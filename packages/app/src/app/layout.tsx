@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { AppHeader } from "@/components/app-header";
 import { SharingSessionProvider } from "@/contex/sharing-session";
 import "./globals.css";
 
@@ -27,10 +26,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full font-sans antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
-        <AppHeader />
+      <body className="flex min-h-screen flex-col">
         <SharingSessionProvider>{children}</SharingSessionProvider>
       </body>
     </html>

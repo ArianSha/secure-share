@@ -2,23 +2,30 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --hostname 127.0.0.1 --port 2525",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --hostname 127.0.0.1 --port 2525",
+    "test": "node --test tests/*.test.mjs",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome check --write",
+    "jazz:validate": "jazz-tools validate --schema-dir src/lib/jazz --migrations-dir src/lib/jazz/migrations"
   },
   "dependencies": {
     "@base-ui/react": "catalog:",
+    "@vercel/functions": "catalog:",
+    "@vercel/sandbox": "catalog:",
     "class-variance-authority": "catalog:",
     "cn": "catalog:",
+    "jazz-tools": "catalog:",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "shadcn": "catalog:",
-    "tw-animate-css": "catalog:"
+    "tw-animate-css": "catalog:",
+    "ws": "catalog:"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
